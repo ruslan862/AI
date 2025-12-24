@@ -5,7 +5,7 @@
 **Seed:** 20240113  
 
 ## Presentation
-[View Presentation Slides](./Plant_Disease_3slides.pptx)
+[View Presentation Slides](https://docs.google.com/presentation/d/1ujRN8jVo8LJDiYe-OQsxgPmiqJ7VoE3q/edit?usp=sharing&ouid=117713182580964735919&rtpof=true&sd=true)
 
 ## Dataset
 - **Name:** PlantVillage (Tomato subset)  
