@@ -1,94 +1,53 @@
-# Task X: Plant Disease Classification (PlantVillage)
+# Task 1: Plant Disease Classification – Tomato Leaf
 
 **Student:** Ruslan Asgarov  
 **ID:** 13  
-**Seed:** 20240113
+**Seed:** 20240113  
 
----
+## Presentation
+[View Presentation Slides](./Plant_Disease_3slides.pptx)
 
-## 📊 Project Overview
+## Dataset
+- **Name:** PlantVillage (Tomato subset)  
+- **Classes:** 3 (Healthy, Early Blight, Late Blight)  
+- **Training samples:** 3000 (example)  
+- **Test samples:** 600 (example)  
 
-This project focuses on **plant disease classification** using the **PlantVillage dataset**.  
-A Convolutional Neural Network (CNN)–based model was trained to classify **three conditions of a single plant type**.
+## Model Architecture
+- **Type:** ResNet18 (pre-trained)  
+- **Convolutional layers:** 17  
+- **Fully connected layers:** 1 (fc layer 512→3)  
+- **Total parameters:** ~11.7M  
 
-- **Dataset:** PlantVillage  
-- **Plant selected:** Tomato  
-- **Number of classes:** 3  
-- **Target accuracy:** ≥ 88%
+## Training Comparison
 
-### Tomato Classes
-- Healthy  
-- Early Blight  
-- Late Blight  
-
----
-
-## 🎤 Presentation
-
-[View Presentation Slides](https://drive.google.com/your-link-here)
-
----
-
-## 📁 Dataset Details
-
-- **Name:** PlantVillage (Tomato subset)
-- **Classes:** 3
-- **Training samples:** XXXX
-- **Validation samples:** XXXX
-- **Test samples:** XXXX
-
-Dataset was split into training, validation, and test sets using a fixed random seed for reproducibility.
-
----
-
-## 🧠 Model Architecture
-
-- **Type:** CNN  
-- **Input size:** 224 × 224 × 3  
-- **Convolutional layers:** X  
-- **Fully connected layers:** X  
-- **Activation function:** ReLU  
-- **Output layer:** Softmax (3 classes)  
-- **Total parameters:** XXXXXXX  
-
----
-
-## ⚙️ Training Comparison
-
-Two different training configurations were tested and compared.
-
-### 🔹 Version 1
-- **Learning rate:** 0.001  
-- **Batch size:** 32  
-- **Optimizer:** Adam  
-- **Epochs:** XX  
-- **Test accuracy:** XX.XX%
-
----
-
-### 🔹 Version 2
+### Version 1
 - **Learning rate:** 0.0001  
 - **Batch size:** 32  
 - **Optimizer:** Adam  
-- **Epochs:** XX  
-- **Test accuracy:** XX.XX%
+- **Test accuracy:** 87%  
 
----
+### Version 2
+- **Learning rate:** 0.00001  
+- **Batch size:** 32  
+- **Optimizer:** Adam  
+- **Test accuracy:** 85%  
 
-## 🏆 Best Result
-
-- **Best version:** Version X  
-- **Final test accuracy:** XX.XX%  
+### Best Result
+- **Best version:** Version 1  
+- **Final test accuracy:** 87%  
 - **Target accuracy:** 88%  
-- **Status:** ✓ Achieved  
+- **Status:** ✗ Below target  
 
----
+## Analysis
+- **Best performing class:** Healthy  
+- **Worst performing class:** Early Blight  
+- **Key observations:**  
+  The model performs very well on healthy leaves. Some confusion occurs between Early Blight and Late Blight classes. Reducing learning rate in Version 2 slightly decreased accuracy.
 
-## 📈 Analysis
-
-- **Best performing class:** Tomato Healthy  
-- **Worst performing class:** Tomato Late Blight  
-- **Key observations:**
-  - Lower learning rate improved generalization.
-  - Data augmentation helped reduce overfitting.
-  - Class imbalance slightly affected Late Blight accuracy.
+## Files
+- `Plant_Disease_3slides.pptx`: 3-slide presentation with overview, training comparison, and best results  
+- `notebook.ipynb`: (if available) Implementation of model and evaluation  
+- `results/training_comparison.png`: Training curves for both versions (optional)  
+- `results/confusion_matrix.png`: Confusion matrix for best model (optional)  
+- `results/predictions.png`: Sample predictions from test set (optional)
